@@ -32,8 +32,9 @@ gem 'figaro'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'simplecov', require: false
+  gem 'capybara'
+  gem 'pry'
 end
 
 group :development do
