@@ -9,7 +9,7 @@ html {
 
 
 .mainbody {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 .wrapper {
   margin: 50px auto;
@@ -24,6 +24,21 @@ html {
   border-radius: 2px;
   box-shadow: 3px 3px 3px #000;
   display: inline-block;
+}
+
+.new-tweet-cards{
+  background-color: #F4F4F4;
+  width:323px;
+  height:150px;
+  margin: 10px;
+  border-radius: 2px;
+  box-shadow: 3px 3px 3px #000;
+  display: inline-block;
+}
+
+.new-card-bottom {
+  padding: 50px;
+  height: 100px;
 }
 
 .tweet-cards .card-top{
@@ -75,6 +90,20 @@ p#name a{
     font-size: 0.95em;
     color: #545454;
 }
+.user-tweet{
+    position: relative;
+    bottom: 7px;
+    /*width: 260px;*/
+    height: 50px;
+    word-wrap: break-word;
+    text-align: center;
+    line-height: 18px;
+    margin: auto;
+    font-weight: 200;
+    font-family: helvetica neue;
+    font-size: 0.95em;
+    color: #545454;
+}
 
 p#date{
   position: relative;
@@ -87,13 +116,18 @@ p#date{
 
 .btn-nav {
   background-color: transparent;
-  border: 1px solid #D3F3EE;
+  border: 2px solid #D3F3EE;
   margin-right: 10px;
 }
 .btn-nav:hover {
   background-color: #D3F3EE !important;
   color: #5D868C;
-  border: 1px solid #5D868C;
+  border: 2px solid #5D868C;
+}
+.btn-nav:focus {
+  background-color: #D3F3EE !important;
+  color: #fff;
+  border: 2px solid #5D868C;
 }
 
 .mark-nav {

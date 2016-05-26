@@ -1,0 +1,39 @@
+<% if @user %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="wrapper">
+        <div class="tweet-cards">
+          <div class="card-top">
+            <% if @user.profile_banner_url %>
+            <%= image_tag "#{@user.profile_banner_url}" %>
+            <% end %>
+          </div>
+          <div class="profile-pic">
+            <%= image_tag @user.profile_image_url.gsub("normal", "400x400") %>
+          </div>
+          <div class="card-bottom">
+            <p id="name">
+              <%= link_to "@#{@user.screen_name}", "http://www.twitter.com/#{@user.screen_name}" %>
+            </p>
+            <div class="tweet"><%= @user.name %><br /><%= @user.description %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="wrapper">
+      <% @tweets.each do |tweet| %>
+        <div class="new-tweet-cards">
+          <div class="new-card-bottom">
+            <div class="user-tweet"><%= tweet[:text] %></div>
+            <p id="date"><%= time_ago_in_words(tweet[:created_at], include_seconds: true) %> ago</p>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<% end %>

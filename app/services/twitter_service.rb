@@ -4,6 +4,18 @@ class TwitterService
     parse(access_token(user).request(:get, "https://api.twitter.com/1.1/statuses/home_timeline.json?count=50"))
   end
 
+  def user_timeline(user)
+    parse(access_token(user).request(:get, "https://api.twitter.com/1.1/statuses/user_timeline.json?count=50"))
+  end
+
+  def followers(user)
+    parse(access_token(user).request(:get, "https://api.twitter.com/1.1/followers/list.json"))
+  end
+
+  def user_show(user)
+    parse(access_token(user).request(:get, "https://api.twitter.com/1.1/users/show.json?screen_name=#{user.screen_name}"))
+  end
+  
   private
 
     def prepare_access_token(oauth_token, oauth_token_secret)
