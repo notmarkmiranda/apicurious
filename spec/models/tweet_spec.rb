@@ -32,7 +32,6 @@ describe Tweet do
     VCR.use_cassette("followers") do
       followers = Tweet.followers(@user)
       follower = followers.first
-
       expect(follower[:name]).to eq "Ana Freeman"
     end
   end
