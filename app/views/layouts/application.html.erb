@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Apicurious</title>
+  <title>Clucker!</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<%= render partial: "shared/navbar" %>
+<%# render partial: "shared/banner" %>
+<div class="mainbody">
+  <%= yield %>
+</div>
 
 </body>
 </html>

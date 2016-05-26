@@ -1,7 +1,0 @@
-<% if current_user %> 
-	Hello, <%= current_user.screen_name %>
-	<%= link_to "Log Out", logout_path %>
-<% else %>
-	<%= link_to "Log in with Twitter", twitter_login_path %>
-<% end %>
-
