@@ -15,9 +15,9 @@ describe TwitterService do
       tweet  = tweets.first
 
       expect(tweets.count).to be > 40
-      expect(tweet[:user][:name]).to eq "Jeff Casimir"
-      expect(tweet[:user][:screen_name]).to eq "j3"
-      expect(tweet[:user][:id]).to eq 1133971
+      expect(tweet[:user][:name]).to eq "Universal Mind"
+      expect(tweet[:user][:screen_name]).to eq "universalmind"
+      expect(tweet[:user][:id]).to eq 14675801
     end
   end
 
@@ -26,7 +26,7 @@ describe TwitterService do
       tweets = @service.user_timeline(@user)
       tweet  = tweets.first
       expect(tweets.count).to be > 40
-      expected_text = "After a few hours of frustration, we finally have stuff. #apicurious… https://t.co/NqPiPlfVRQ"
+      expected_text = "refreshing cassettes has allowed @j3 to invade my twitter_service_spec file. #turingschool #twitterapi https://t.co/LpdQdM10DU"
       expect(tweet[:text]).to eq expected_text
     end
   end
@@ -36,7 +36,7 @@ describe TwitterService do
       users = @service.followers(@user)
       user = users.first[1].first
       expect(users.count).to be > 1
-      expect(user[:name]).to eq "Ling Tran"
+      expect(user[:name]).to eq "Ana Freeman"
     end
   end
 
