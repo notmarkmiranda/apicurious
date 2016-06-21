@@ -41,7 +41,6 @@ RSpec.configure do |config|
   config.around(:each) do |example|
     DatabaseCleaner.cleaning do
       example.run
-      # OmniAuth.config.mock_auth[:twitter] = nil
     end
   end
 end

@@ -15,8 +15,12 @@ class TwitterService
   def user_show(user)
     parse(access_token(user).request(:get, "https://api.twitter.com/1.1/users/show.json?screen_name=#{user.screen_name}"))
   end
-  
+
   private
+
+    def access_token(user)
+      prepare_access_token(user.oauth_token, user.oauth_token_secret)
+    end
 
     def prepare_access_token(oauth_token, oauth_token_secret)
       consumer     = OAuth::Consumer.new(ENV["TWITTER_CONSUMER_API_KEY"],
@@ -26,10 +30,6 @@ class TwitterService
                        oauth_token_secret: oauth_token_secret }
       access_token = OAuth::AccessToken.from_hash(consumer, token_hash)
       return access_token
-    end
-
-    def access_token(user)
-      prepare_access_token(user.oauth_token, user.oauth_token_secret)
     end
 
     def parse(input)
